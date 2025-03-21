@@ -57,7 +57,6 @@ exports.login = async function (req, res, next) {
     res.cookie("auth", token, {
       httpOnly: false,
       secure: false,
-      domain: 'http://localhost:3001',
       maxAge: 24 * 60 * 60 * 1000,
     });
     res.status(200).json({
