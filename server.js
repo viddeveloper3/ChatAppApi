@@ -26,7 +26,8 @@ const io = new Server(server, {
   cors: {
     origin: "https://quicktalkapp.netlify.app",
     methods: ["GET", "POST", "PATCH", "DELETE"],
-  },
+    credentials: true,
+  }
 });
 
 io.on("connection", (socket) => {
