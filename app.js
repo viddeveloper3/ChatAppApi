@@ -11,7 +11,7 @@ const messageRoutes = require("./Routes/messageRoutes");
 
 app.use(
   cors({
-    origin: "https://chatapi-nrs0.onrender.com/api/v1/",
+    origin: "https://chatapi-nrs0.onrender.com",
     credentials: true,
   })
 );
