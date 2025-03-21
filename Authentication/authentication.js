@@ -145,7 +145,10 @@ exports.logout = async function (req, res, next) {
       );
     }
 
-    res.clearCookie("auth");
+    res.clearCookie("auth",{
+  path: '/',
+  domain: 'chatapi-nrs0.onrender.com',
+});
     res.status(201).json({
       status: "sucesss",
     });
