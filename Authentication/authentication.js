@@ -56,7 +56,7 @@ exports.login = async function (req, res, next) {
 
     const token = jwtToken(user._id);
     res.cookie("auth", token, {
-  httpOnly: false,
+  httpOnly: true,
   secure: false,
   maxAge: 24 * 60 * 60 * 1000
     });
