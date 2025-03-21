@@ -25,9 +25,10 @@ exports.signup = async function (req, res, next) {
     }
     const token = jwtToken(user._id);
     res.cookie("auth", token, {
-      httpOnly: false,
-      secure: false,
-      maxAge: 24 * 60 * 60 * 1000,
+  httpOnly: true,
+  secure: true,
+  sameSite: 'None',
+  maxAge: 24 * 60 * 60 * 1000
     });
     res.status(201).json({
       status: "sucess",
