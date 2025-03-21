@@ -145,7 +145,12 @@ exports.logout = async function (req, res, next) {
       );
     }
 
-    res.clearCookie("auth");
+    res.clearCookie("auth", { // Add options here
+      path: '/',       // Must match the path the cookie was set with
+      sameSite: 'None', // Must match the SameSite attribute
+      secure: true,     // Must match the Secure attribute (if you set it)
+      httpOnly: true,   // If you set HttpOnly initially, include it (optional, but good practice)
+    });
     res.status(201).json({
       status: "sucesss",
     });
