@@ -11,7 +11,7 @@ const messageRoutes = require("./Routes/messageRoutes");
 
 app.use(
   cors({
-    origin: "http://localhost:3001",
+    origin: "https://quicktalkapp.netlify.app",
     credentials: true,
   })
 );
