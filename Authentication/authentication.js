@@ -58,7 +58,6 @@ exports.login = async function (req, res, next) {
     res.cookie("auth", token, {
   httpOnly: true,
   secure: true,
-  sameSite: 'None',
   maxAge: 24 * 60 * 60 * 1000
     });
     res.status(200).json({
@@ -145,10 +144,7 @@ exports.logout = async function (req, res, next) {
       );
     }
 
-    res.clearCookie("auth",{
-  path: '/',
-  domain: 'chatapi-nrs0.onrender.com',
-});
+    res.clearCookie("auth");
     res.status(201).json({
       status: "sucesss",
     });
